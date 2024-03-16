@@ -16,3 +16,20 @@ bodyEl.addEventListener("mousemove", (event) => {
     spanEl.remove();
   },3000)
 });
+
+bodyEl.addEventListener("touchstart", (event) => {
+    console.log("move");
+    let xPos = event.touches[0].clientX;
+    let yPos = event.touches[0].clientY;
+    let spanEl = document.createElement("span");
+    spanEl.style.left = xPos + "px";
+    spanEl.style.top = yPos + "px";
+    const size = Math.random()*100;
+    spanEl.style.width = size + "px";
+    spanEl.style.height = size + "px";
+    bodyEl.appendChild(spanEl);
+  
+    setTimeout(() => {
+      spanEl.remove();
+    },3000)
+  });
